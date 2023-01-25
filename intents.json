@@ -10,5 +10,38 @@
             "olá! estou bem",
             "oi! estou bem"
         ]
+    },
+    {
+        "tag":"welcome",
+        "patterns":[
+            "epa", "oiiee",
+            "eii", "oie",
+            "eei", "oiee",
+            "eaai", "ooie",
+            "eaii", "fala",
+            "oiii", "fala ai",
+            "ooi", "eae",
+            "olaa", "e ai",
+            "saudações", "opa",
+            "oi bom dia", "olá",
+            "oi como vai?", "oi tudo bem?",
+            "olá tudo bem?", "oii",
+            "oi boa noite", "bom dia",
+            "boa noite", "boa tarde",
+            "como vai?", "oi tudo bem?",
+            "tudo bem?", "oi?",
+            "oi boa tarde", "há quanto tempo",
+            "opa", "saudações!",
+            "e aí", "oioi",
+            "oii", "ou",
+            "oiiii", "iniciar",
+            "qual foi", "salve",
+            "blz", "eaii"
+        ],
+        "reponses":[
+            "Olá, boas vindas! \nEu sou Ávila! 😊 \nSou uma assistente virtual criada por aprendizes da ETS para te ajudar a sanar dúvidas frequentes. \nQual seu nome?",
+            "Olá, boas vindas! \nEu sou Ávila! 😊 \nSou uma assistente virtual criada por aprendizes da ETS para te ajudar a sanar dúvidas frequentes. \nComo é seu nome?",
+            "Olá, boas vindas! \nEu sou Ávila! 😊 \nSou uma assistente virtual criada por aprendizes da ETS para te ajudar a sanar dúvidas frequentes. \nComo podemos te chamar?"
+        ]
     }
 ]}
