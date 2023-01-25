@@ -3,7 +3,8 @@
         "tag":"testing",
         "patterns": [
             "oi, como você tá?",
-            "eai tudo bem?"
+            "eai tudo bem?",
+            "oi eu preciso de ajuda"
         ],
         "reponses":[
             "olá! estou bem",
