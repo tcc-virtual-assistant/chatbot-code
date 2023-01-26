@@ -3,6 +3,10 @@ from nltk_utils import tokenize, stem, bag_of_words
 from unidecode import unidecode
 import numpy as np
 
+import torch 
+import torch.nn as nn
+from torch.utils.data import Dataset, DataLoader
+
 with open('intents.json', 'r') as file:
     intents = json.load(file)
 
