@@ -8,7 +8,7 @@ from nltk_utils import bag_of_words, tokenize
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('intents.json', 'r') as json_data:
+with open('intents.json', 'r', encoding="utf8") as json_data:
     intents = json.load(json_data)
 
 FILE = "data.pth"
@@ -25,12 +25,12 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-bot_name = "Sam"
-print("Let's chat! (type 'quit' to exit)")
+bot_name = "Ávila"
+print("Vamos testar! (Escreva 'sair' para sair)")
 while True:
     # sentence = "do you use credit cards?"
-    sentence = input("You: ")
-    if sentence == "quit":
+    sentence = input("Você: ")
+    if sentence == "sair":
         break
 
     sentence = tokenize(sentence)
@@ -48,6 +48,6 @@ while True:
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                print(f"{bot_name}: {random.choice(intent['responses'])}")
+                print(f"{bot_name}: {random.choice(intent['reponses'])}")
     else:
-        print(f"{bot_name}: I do not understand...")
+        print(f"{bot_name}: Desculpe, eu não consegui compreender...")
