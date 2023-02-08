@@ -1,47 +1,101 @@
 {"intents":[
-    {   
-        "tag":"testing",
-        "patterns": [
-            "oi, como você tá?",
-            "eai tudo bem?",
-            "oi eu preciso de ajuda"
-        ],
-        "reponses":[
-            "olá! estou bem",
-            "oi! estou bem"
-        ]
-    },
     {
         "tag":"welcome",
         "patterns":[
-            "epa", "oiiee",
-            "eii", "oie",
-            "eei", "oiee",
-            "eaai", "ooie",
-            "eaii", "fala",
-            "oiii", "fala ai",
-            "ooi", "eae",
-            "olaa", "e ai",
+            "epa", "ei",
+            "oie", "fala ai",
+            "oi", "e ai",
             "saudações", "opa",
             "oi bom dia", "olá",
-            "oi como vai?", "oi tudo bem?",
-            "olá tudo bem?", "oii",
-            "oi boa noite", "bom dia",
-            "boa noite", "boa tarde",
-            "como vai?", "oi tudo bem?",
-            "tudo bem?", "oi?",
-            "oi boa tarde", "há quanto tempo",
-            "opa", "saudações!",
-            "e aí", "oioi",
-            "oii", "ou",
-            "oiiii", "iniciar",
-            "qual foi", "salve",
-            "blz", "eaii"
+            "oi como vai?", "olá tudo bem?",
+            "oi boa noite", "boa tarde",
+            "como vai?", "opa",
+            "saudações!", "oioi",
+            "iniciar", "qual foi", "salve"
         ],
-        "reponses":[
-            "Olá, boas vindas! \nEu sou Ávila! 😊 \nSou uma assistente virtual criada por aprendizes da ETS para te ajudar a sanar dúvidas frequentes. \nQual seu nome?",
-            "Olá, boas vindas! \nEu sou Ávila! 😊 \nSou uma assistente virtual criada por aprendizes da ETS para te ajudar a sanar dúvidas frequentes. \nComo é seu nome?",
-            "Olá, boas vindas! \nEu sou Ávila! 😊 \nSou uma assistente virtual criada por aprendizes da ETS para te ajudar a sanar dúvidas frequentes. \nComo podemos te chamar?"
+        "responses":[
+            "Olá, boas vindas!\n Eu sou Ávila!\n Sou uma assistente virtual criada por aprendizes da ETS para te ajudar a sanar dúvidas frequentes. \nComo posso te ajudar?"
+        ]
+    },
+    {
+        "tag":"sair",
+        "patterns":[
+            "quero sair","encerrar",
+            "sair", "tchau", "adeus",
+            "acabar", "acabei"
+        ],
+        "responses":[
+            "Espero que eu tenha conseguido te ajudar! Tenha um ótimo dia!",
+            "Estou sempre disponível para te ajudar. Tenha um ótimo trabalho"
+        ]
+    },
+    {
+        "tag":"ramal",
+        "patterns":[
+            "ramal", "ramais",
+            "contato", "telefone",
+            "numero"
+        ],
+        "responses":[
+            "Vou listar pra você cinco ramais da bosch, mas você pode conferir mais na tela.\n Ramal do ambulatório: 21031416\n Ramal dos bombeiros: 21031234.\n Ramal dos fretados: 21033915.\nPortaria  4: 21032142\nFCM: 21032142"
+        ]
+    },
+    { 
+        "tag":"ponto",
+        "patterns":[
+            "horario do ponto", "bater ponto",
+            "horario saida", "horario entrada",
+            "hora de bater ponto"
+        ],
+        "responses":[
+            "Os horários para aprendizes da manhã são: Entrada 07:25 às 07:30\nSaída às 11:30 até às 11:35.\n Para aprendizes da tarde: entrada às 12:5 até às 13:00\n. Saída às 17:00 até às 17:05."
+        ]
+    },
+    {
+        "tag":"regras",
+        "patterns":[
+            "normas da empresa",
+            "regras da empresa"
+        ],
+        "responses":[
+            "Na bosch não é permitido correr na planta.\n Não é permitido andar utilizando o celular ao mesmo tempo.\n Não traga materiais de casa como notebook sem a nota fiscal e o workon.\n Sempre atravesse na faixa de pedestre entre outras normas."
+        ]
+    },
+    {
+        "tag":"epi",
+        "patterns":[
+            "epi","equipamentos",
+            "pedir epi", "pegar epi"
+        ],
+        "responses":[
+            "Na planta possuímos tótens de EPI. Para retirá-los basta passar o crachá no sensor, selecionar um produto e clicar em Emissão."
+        ]
+    },
+    {
+        "tag":"medicamento",
+        "patterns":[
+            "reembolso de medicamento",
+            "reembolso de remédio",
+            "comprei um remedio e quero reembolso",
+            "como receber reembolso de um remédio"
+        ],
+        "responses":[
+            "Para conseguir reembolso de um medicamento, você precisará da sua receita médica e da nota fiscal de compra do remédio\n. Grampeie esses dois documentos e escreva no verso na receita seu nome completo EDV, telefone e e-mail.\n Após isso, deposite esses documentos nas caixinhas disponíveis nas portarias."
+        ]
+    },
+    {
+        "tag":"",
+        "patterns":[
+            ""
+        ],
+        "responses":[
+            ""
+        ]
+    },
+    {
+        "tag":"",
+        "patterns":[
+            ""
         ]
     }
 ]}
