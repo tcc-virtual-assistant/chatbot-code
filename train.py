@@ -15,20 +15,16 @@ with open('intents.json', 'r', encoding="utf8") as file:
 all_words = []
 tags = []
 xy = []
-# loop through each sentence in our intents patterns
+
 for intent in intents['intents']:
     tag = intent['tag']
-    # add to tag list
     tags.append(tag)
+
     for pattern in intent['patterns']:
-        # tokenize each word in the sentence
         w = tokenize(pattern)
-        # add to our words list
         all_words.extend(w)
-        # add to xy pair
         xy.append((w, tag))
 
-# stem and lower each word
 # colleting and tokenization
 ignore_words = ['?', '!', ".", ","]
 all_words = [stem(unidecode(w), "1") for w in all_words if w not in ignore_words]
@@ -44,10 +40,8 @@ print(len(all_words), "unique stemmed words:", all_words)
 X_train = []
 y_train = []
 for (pattern_sentence, tag) in xy:
-    # X: bag of words for each pattern_sentence
     bag = bag_of_words(pattern_sentence, all_words)
     X_train.append(bag)
-    # y: PyTorch CrossEntropyLoss needs only class labels, not one-hot
     label = tags.index(tag)
     y_train.append(label)
 
@@ -92,7 +86,6 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
 
-# Loss and optimizer
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
@@ -101,14 +94,10 @@ for epoch in range(num_epochs):
     for (words, labels) in train_loader:
         words = words.to(device)
         labels = labels.to(dtype=torch.long).to(device)
-        
-        # Forward pass
+    
         outputs = model(words)
-        # if y would be one-hot, we must apply
-        # labels = torch.max(labels, 1)[1]
         loss = criterion(outputs, labels)
         
-        # Backward and optimize
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
