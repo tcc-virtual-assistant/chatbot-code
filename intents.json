@@ -11,22 +11,10 @@
             "oi boa noite", "boa tarde",
             "como vai?", "opa",
             "saudações!", "oioi",
-            "iniciar", "qual foi", "salve"
+            "iniciar"
         ],
         "responses":[
             "Olá, boas vindas!\n Eu sou Ávila!\n Sou uma assistente virtual criada por aprendizes da ETS para te ajudar a sanar dúvidas frequentes. \nComo posso te ajudar?"
-        ]
-    },
-    {
-        "tag":"sair",
-        "patterns":[
-            "quero sair","encerrar",
-            "sair", "tchau", "adeus",
-            "acabar", "acabei"
-        ],
-        "responses":[
-            "Espero que eu tenha conseguido te ajudar! Tenha um ótimo dia!",
-            "Estou sempre disponível para te ajudar. Tenha um ótimo trabalho"
         ]
     },
     {
@@ -34,7 +22,9 @@
         "patterns":[
             "ramal", "ramais",
             "contato", "telefone",
-            "numero"
+            "numero", "ambulatorio",
+            "portaria", "fcm",
+            "bombeiros", "fretados"
         ],
         "responses":[
             "Vou listar pra você cinco ramais da bosch, mas você pode conferir mais na tela.\n Ramal do ambulatório: 21031416\n Ramal dos bombeiros: 21031234.\n Ramal dos fretados: 21033915.\nPortaria  4: 21032142\nFCM: 21032142"
@@ -45,7 +35,7 @@
         "patterns":[
             "horario do ponto", "bater ponto",
             "horario saida", "horario entrada",
-            "hora de bater ponto"
+            "hora de bater ponto", "entrada", "saida"
         ],
         "responses":[
             "Os horários para aprendizes da manhã são: Entrada 07:25 às 07:30\nSaída às 11:30 até às 11:35.\n Para aprendizes da tarde: entrada às 12:5 até às 13:00\n. Saída às 17:00 até às 17:05."
@@ -54,11 +44,11 @@
     {
         "tag":"regras",
         "patterns":[
-            "normas da empresa",
-            "regras da empresa"
+            "normas da empresa","normas",
+            "regras da empresa","regras"
         ],
         "responses":[
-            "Na bosch não é permitido correr na planta.\n Não é permitido andar utilizando o celular ao mesmo tempo.\n Não traga materiais de casa como notebook sem a nota fiscal e o workon.\n Sempre atravesse na faixa de pedestre entre outras normas."
+            "Na bosch não é permitido correr na planta.\n Não é permitido andar utilizando o celular ao mesmo tempo.\n Não traga materiais de casa como notebook sem a nota fiscal e o workon.\n Sempre atravesse na faixa de pedestre, entre outras normas."
         ]
     },
     {
@@ -74,28 +64,14 @@
     {
         "tag":"medicamento",
         "patterns":[
-            "reembolso de medicamento",
-            "reembolso de remédio",
+            "reembolso de medicamento","medicamento",
+            "reembolso de remédio", "reembolso",
             "comprei um remedio e quero reembolso",
-            "como receber reembolso de um remédio"
+            "como receber reembolso de um remédio",
+            "remedio"
         ],
         "responses":[
-            "Para conseguir reembolso de um medicamento, você precisará da sua receita médica e da nota fiscal de compra do remédio\n. Grampeie esses dois documentos e escreva no verso na receita seu nome completo EDV, telefone e e-mail.\n Após isso, deposite esses documentos nas caixinhas disponíveis nas portarias."
-        ]
-    },
-    {
-        "tag":"",
-        "patterns":[
-            ""
-        ],
-        "responses":[
-            ""
-        ]
-    },
-    {
-        "tag":"",
-        "patterns":[
-            ""
+            "Para conseguir reembolso de um medicamento, você precisará da sua receita médica e da nota fiscal de compra do remédio.\n Grampeie esses dois documentos e escreva no verso na receita seu nome completo EDV, telefone e e-mail.\n Após isso, deposite esses documentos nas caixinhas disponíveis nas portarias."
         ]
     }
 ]}

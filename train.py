@@ -30,8 +30,8 @@ for intent in intents['intents']:
 
 # stem and lower each word
 # colleting and tokenization
-ignore_words = ['?', '.', '!']
-all_words = [stem(w, "1") for w in all_words if w not in ignore_words]
+ignore_words = ['?', '!', ".", ","]
+all_words = [stem(unidecode(w), "1") for w in all_words if w not in ignore_words]
 # remove duplicates and sort
 all_words = sorted(set(all_words))
 tags = sorted(set(tags))
@@ -51,8 +51,8 @@ for (pattern_sentence, tag) in xy:
     label = tags.index(tag)
     y_train.append(label)
 
-X_train = np.array(X_train)
-y_train = np.array(y_train)
+X_train = np.array(X_train) #pattern
+y_train = np.array(y_train) #tag
 
 # Hyper-parameters 
 num_epochs = 1000

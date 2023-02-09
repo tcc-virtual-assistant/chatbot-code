@@ -1,6 +1,6 @@
 import random
 import json
-
+import train
 import torch
 
 from model import NeuralNet
@@ -28,9 +28,9 @@ model.eval()
 bot_name = "Ávila"
 print("Vamos testar! (Escreva 'sair' para sair)")
 while True:
-    # sentence = "do you use credit cards?"
     sentence = input("Você: ")
     if sentence == "sair":
+        print( "Espero que eu tenha conseguido te ajudar! Tenha um ótimo dia!")
         break
 
     sentence = tokenize(sentence)
@@ -42,7 +42,6 @@ while True:
     _, predicted = torch.max(output, dim=1)
 
     tag = tags[predicted.item()]
-
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
     if prob.item() > 0.75:
