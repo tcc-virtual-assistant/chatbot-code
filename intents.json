@@ -1,6 +1,160 @@
 {"intents":[
     {
+        "tag":"presidenteAmerica",
+        "id":1,
+        "patterns":[
+            "Quem é o presidente da planta/Bosch América Latina",
+            "bosch presidente américa latina",
+            "américa latina", "brasil",
+            "presidente bosch brasil",
+            "bosch", "ceo america latina"
+        ],
+        "responses":[
+            "Gastón Diaz Perez, 45 anos, assumiu a presidência da Robert Bosch América Latina em 2022. Graduado em Administração de Empresas pela Pontifícia Universidade Católica da Argentina (UCA), Gastón possui MBA em Gestão pela Universidade Austral (IAE) em Buenos Aires. Iniciou no Grupo Bosch no programa de trainee executivo em 2000 e desenvolveu sua carreira internacional ocupando diferentes posições nas áreas financeiras e comerciais na Argentina, Espanha, Brasil e Alemanha."
+        ]
+    },
+    {
+        "tag":"presidenteBosch",
+        "id":2,
+        "patterns":[
+            "Quem é o presidente/CEO da Bosch",
+            "presidente bosch mundo","ceo bosch",
+            "presidente bosch mundial", "mundial",
+            "ceo bosch mundo"
+        ],
+        "responses":[
+            "O Doutor Stefan Hartung é presidente do conselho de administração e acionista da Robert Bosch, G1 desde 1º de janeiro de 2022. Suas responsabilidades incluem estratégia corporativa, comunicações corporativas, assuntos governamentais e desenvolvimento de tecnologia. Ele também é responsável pela pesquisa corporativa, engenharia avançada, gerenciamento de qualidade corporativa e pelo departamento corporativo de Fabricação de Tecnologia. Além disso, ele é responsável pela subsidiária Bosch Healthcare Solutions e pelas operações da Bosch na China."
+        ]
+    },
+    {
+        "tag":"RobertBosch",
+        "id":3,
+        "patterns":[
+            "Quem foi Robert Bosch",
+            "fundou", "fundador",
+            "robert bosch"
+        ],
+        "responses":[
+            "August Robert Bosch nasceu em Albeck, 23 de setembro de 1861 e morreu em 12 de março de 1942. Foi um industrial e inventor alemão, fundador da Robert Bosch. Estudou nos Estados Unidos. Passou mais de sete anos trabalhando em diversas empresas, trabalhando até mesmo com Thomas Edison em Nova York, e no Reino Unido para a empresa alemã Siemens. Em 1886 fundou uma oficina de mecânica de precisão e engenharia elétrica, que em 1937 tornou-se a Robert Bosch. Deve-se a ele o desenvolvimento da ignição por magneto e da bomba de injeção para motores a diesel."
+        ]
+    },
+    {
+        "tag":"historiaBosch",
+        "id":4,
+        "patterns":[
+            "Qual é a história da Bosch",
+            "historia", "historia bosch"
+        ],
+        "responses":[
+            "A Empresa Bosch teve o seu início com seu fundador Robert Bosch em 1886 com a abertura de uma oficina mecânica de precisão e engenharia elétrica em Stuttgard Alemanha. A partir de 1897, Robert Bosch começou a instalar dispositivos de ignição de melhor design em automóveis e tornou–se o único fornecedor de ignição verdadeiramente confiável. Em 1902, o engenheiro-chefe da Bosch, Gottlob Honold, apresentou uma solução ainda melhor: o sistema de ignição de alta tensão com vela de ignição. Esse produto abriu caminho para a Bosch se tornar um fornecedor líder mundial no mercado automotivo. Em 1901 foi construida a primeira fábrica da Bosch que se expandiu para prédios vizinhos, dai em diante a Bosch só cresceu como empresa e negócio de sucesso, alcançando o mundo inteiro e se tornando uma referência no mercado automobilistico e de ferramentas elétricas. Hoje em dia a Bosch tem crescendo como uma referência no mercado de IOT e inteligência artificial, criando tecnologias inovadoras. Para saber mais sobre a nossa história acesse o site da Bosch, bosch.com.br, barra, nossa empresa, barra, nossa história."
+        ]
+    },
+    {
+        "tag":"cracha",
+        "id":5,
+        "patterns":[
+            "Onde devolvo o cracha provisório",
+            "crachá provisório", "crachá temporário"
+        ],
+        "responses":[
+            "O cracha provisório deve ser devolvido na portaria 4 no momento em que você estiver saindo da Bosch. Lembre-se de que o cracha não deve ser retirado da planta."
+        ]
+    },
+    {
+        "tag":"vsdia",
+        "id":6,
+        "patterns":[
+            "O que é VsDia",
+            "vsdia"
+        ],
+        "responses":[
+            "O VsDia se trata de uma metodologia de estudo de caso, ela é utilizada antes de iniciar um projeto que vai aprimorar ou interferir em uma linha de processos já existentes. Essa ferramenta ajuda no planejamento, cálculo de horas de trabalho, e divisão de tarefas. O diagrama geralmente é desenvolvido utilizando o software do Excel."
+        ]
+    },
+    {
+        "tag":"boschBrasil",
+        "id":7,
+        "patterns":[
+            "Há quantos anos a Bosch está no Brasil",
+            "bosch ta no brasil há quanto tempo",
+            "bosch brasil"
+        ],
+        "responses":[
+            "Em 1959 a Bosch se transferiu para Campinas, São Paulo, inaugurando ali sua primeira fábrica no Brasil para produzir autopeças."
+        ]
+    },
+    {
+        "tag":"ets",
+        "id":8,
+        "patterns":[
+            "O que significa ETS",
+            "ets o que é","significado",
+            "significado ets","ets"
+        ],
+        "responses":[
+            "ETS se trata da sigla em inglês para Escola Técnica de Engenharia. A ETS todos os anos integra diversos aprendizer na empresa da Bosch para poderem adquirir conhecimentos relacionados a um dos cursos do Senai, assim garantindo que os profissionais que estão atuando na planta tenham qualificação e conhecimento técnico referente ao mundo empresarial."
+        ]
+    },
+    {
+        "tag":"boschMundo",
+        "id":9,
+        "patterns":[
+            "Quantas Bosch existem no mundo",
+            "numero de bosch no mundo"
+        ],
+        "responses":[
+            "A bosch tem 440 subsidiárias e empresas regionais em mais de 60 países com parceiros de vendas e serviços em aproximadamente 150 países espalhados pelo mundo."
+        ]
+    },
+    {
+        "tag":"colaboradores",
+        "id":10,
+        "patterns":[
+            "Quantos colaboradores da Bosch existem no Brasil",
+            "quantas pessoas trabalham na bosch brasil",
+            "colaboradores brasil", "numero colaboradores"
+        ],
+        "responses":[
+            "Com mais de 65 anos de história com o Brasil, Grupo Bosch emprega atualmente no país cerca de 8.800 colaboradores."
+        ]
+    },
+    {
+        "tag":"atuacaoBosch",
+        "id":11,
+        "patterns":[
+            "O que a Bosch faz",
+            "bosch produz o que", "o que produz"
+        ],
+        "responses":[
+            "A Bosch atua em diferentes ramos da industria. Entre elas ela se contra desenvolvendo acessórios e ferramentas elétricas, negócios industriais, sistemas de segurança, soluções técnicas para manufatura, tecnologia de acionamento e controle, soluções de software e ainda atuando entre outros ramos."
+        ]
+    },
+    {
+        "tag":"instrutoresEts",
+        "id":12,
+        "patterns":[
+            "Quem são os instrutores da ETS",
+            "quem da aula na ets", "instrutores ETS"
+        ],
+        "responses":[
+            "Atualmente a Bosch tem 8 instrutores efetivados. Sendo esse responsáveis por diferentes cursos e aulas dentro da ETS. Eles são Cleber Augusto, Leonardo Oliveira, Vanessa Mendes, Tiago Croda, Edmar Ianella, Lucas Dias, Francis Franquini e Roberta Costa."
+        ]
+    },
+    {
+        "tag":"objetivo",
+        "id":13,
+        "patterns":[
+            "Qual é o seu objetivo como assistente virtual",
+            "pra que voce serve", "voce serve pra que",
+            "seu objetivo"
+        ],
+        "responses":[
+            "O meu objetivo é tirar as dúvidas dos colaboradores da Bosch acerca da empresa. Assim ajudando a criar um ambiente mais familiar e confortável para todos. Além disso, tenho ferramentas de localização e agendamentos que podem ser utilizadas para ajudar no gerenciamento da ETS."
+        ]
+    },
+    {
         "tag":"welcome",
+        "id":14,
         "patterns":[
             "epa", "ei",
             "oie", "fala ai",
@@ -19,6 +173,7 @@
     },
     {
         "tag":"ramal",
+        "id":15,
         "patterns":[
             "ramal", "ramais",
             "contato", "telefone",
@@ -32,10 +187,11 @@
     },
     { 
         "tag":"ponto",
+        "id":16,
         "patterns":[
             "horario do ponto", "bater ponto",
             "horario saida", "horario entrada",
-            "hora de bater ponto", "entrada", "saida"
+            "hora de bater ponto", "entrada", "saida","ponto"
         ],
         "responses":[
             "Os horários para aprendizes da manhã são: Entrada 07:25 às 07:30\nSaída às 11:30 até às 11:35.\n Para aprendizes da tarde: entrada às 12:5 até às 13:00\n. Saída às 17:00 até às 17:05."
@@ -43,6 +199,7 @@
     },
     {
         "tag":"regras",
+        "id":17,
         "patterns":[
             "normas da empresa","normas",
             "regras da empresa","regras"
@@ -53,6 +210,7 @@
     },
     {
         "tag":"epi",
+        "id":18,
         "patterns":[
             "epi","equipamentos",
             "pedir epi", "pegar epi"
@@ -63,6 +221,7 @@
     },
     {
         "tag":"medicamento",
+        "id":19,
         "patterns":[
             "reembolso de medicamento","medicamento",
             "reembolso de remédio", "reembolso",
