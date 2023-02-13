@@ -1,18 +1,10 @@
 import random
 import json
-# import train
+import train
 import torch
+import requests
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
-
-from fastapi import FastAPI
-import uvicorn
-
-chatApi = FastAPI()
-
-@chatApi.get('/chat')
-async def home():
-    return "aaaaaa"
 
 def chatbot():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -53,12 +45,30 @@ def chatbot():
         tag = tags[predicted.item()]
         probs = torch.softmax(output, dim=1)
         prob = probs[0][predicted.item()]
-        if prob.item() > 0.75:
+        if prob.item() > 0.9993212223052980:
+            print(prob.item())
             for intent in intents['intents']:
                 if tag == intent["tag"]:
-                    print(f"{bot_name}: {random.choice(intent['responses'])}")
+                    print(intent['id'])
+                    id = intent['id']
+                    response = requests.get(f'http://localhost:8000/answer/{id}')
+                    call = response.json()
+                    answer = call['response']
+                    print(answer)
+                    # print(f"{bot_name}: {random.choice(intent['responses'])}")
         else:
+            print(prob.item())
             print(f"{bot_name}: Desculpe, eu não consegui compreender...")
 
-if __name__ == '__main__':
-    uvicorn.run(app=chatApi, host="127.0.0.1", port=777)
+
+
+while True:
+    try:
+        with sr.Microphone() as source:
+            voice = listener.listen(source)
+            command = listener.recognize_google(voice, language='PT-BR')
+            command =  command.lower()
+            if command != []:
+                comparator(command)
+    except:
+        pass
