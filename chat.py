@@ -46,18 +46,14 @@ def chatbot():
         probs = torch.softmax(output, dim=1)
         prob = probs[0][predicted.item()]
         if prob.item() > 0.9993212223052980:
-            print(prob.item())
             for intent in intents['intents']:
                 if tag == intent["tag"]:
-                    print(intent['id'])
                     id = intent['id']
                     response = requests.get(f'http://localhost:8000/answer/{id}')
                     call = response.json()
                     answer = call['response']
                     print(answer)
-                    # print(f"{bot_name}: {random.choice(intent['responses'])}")
         else:
-            print(prob.item())
-            print(f"{bot_name}: Desculpe, eu não consegui compreender...")
+            print("Desculpe, eu não consegui compreender...")
 
 chatbot()

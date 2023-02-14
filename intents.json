@@ -54,10 +54,11 @@
         "id":5,
         "patterns":[
             "Onde devolvo o cracha provisório",
-            "crachá provisório", "crachá temporário"
+            "crachá provisório", "crachá temporário",
+            "perdi o crachá"
         ],
         "responses":[
-            "O cracha provisório deve ser devolvido na portaria 4 no momento em que você estiver saindo da Bosch. Lembre-se de que o cracha não deve ser retirado da planta."
+            "O crachá provisório deve ser devolvido na portaria 4 no momento em que você estiver saindo da Bosch. Lembre-se de que o crachá não deve ser retirado da planta."
         ]
     },
     {
@@ -194,7 +195,7 @@
             "hora de bater ponto", "entrada", "saida","ponto"
         ],
         "responses":[
-            "Os horários para aprendizes da manhã são: Entrada 07:25 às 07:30\nSaída às 11:30 até às 11:35.\n Para aprendizes da tarde: entrada às 12:5 até às 13:00\n. Saída às 17:00 até às 17:05."
+            "Os horários para aprendizes da manhã são: Entrada 07:25 às 07:30\nSaída às 11:30 até às 11:35.\n Para aprendizes da tarde: entrada às 12:5 até às 13:00\n. Saída às 17:00 até às 17:05. Caso tenha batido o ponto fora desse horário, por favor, notifique o Edmar Ianella."
         ]
     },
     {
@@ -231,6 +232,37 @@
         ],
         "responses":[
             "Para conseguir reembolso de um medicamento, você precisará da sua receita médica e da nota fiscal de compra do remédio.\n Grampeie esses dois documentos e escreva no verso na receita seu nome completo EDV, telefone e e-mail.\n Após isso, deposite esses documentos nas caixinhas disponíveis nas portarias."
+        ]
+    },
+    {
+        "tag":"5s",
+        "id":20,
+        "patterns":[
+            "o que é 5s", "5s",
+            "metodologia 5s"
+        ],
+        "responses":[
+            "O 5s é uma metodologia utilizada para promover e alcançar a melhoria contínua e a qualidade total. Na ETS o 5S é aplicado na segunda de manhã na oficina, salas de aula e ambiente de convivência. No BTC essas metodologias também devem ser aplicadas nas salas 1, 2 e 3. Na quarta-feira à tarde deve ser feito o mesmo processo"       
+        ]
+    },
+    {
+        "tag":"numeroBoschBrasil",
+        "id":21,
+        "patterns":[
+            "quantas bosch tem no brasil"
+        ],
+        "responses":[
+            "Atualmente no Brasil existem 17 unidades da Bosch, sendo que 9 se encontram no estado de São Paulo, uma em Minas Gerais, uma na Bahia, outra em Pernambuco, 3 no Paraná e duas em Santa Catarina."
+        ]
+    },
+    {
+        "tag":"",
+        "id":22,
+        "patterns":[
+            "Como funciona a ets?"
+        ],
+        "responses":[
+            "DPS EU FAÇO"
         ]
     }
 ]}
