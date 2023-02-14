@@ -60,15 +60,4 @@ def chatbot():
             print(prob.item())
             print(f"{bot_name}: Desculpe, eu não consegui compreender...")
 
-
-
-while True:
-    try:
-        with sr.Microphone() as source:
-            voice = listener.listen(source)
-            command = listener.recognize_google(voice, language='PT-BR')
-            command =  command.lower()
-            if command != []:
-                comparator(command)
-    except:
-        pass
+chatbot()
