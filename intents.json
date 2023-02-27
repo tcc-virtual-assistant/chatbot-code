@@ -254,15 +254,5 @@
         "responses":[
             "Atualmente no Brasil existem 17 unidades da Bosch, sendo que 9 se encontram no estado de São Paulo, uma em Minas Gerais, uma na Bahia, outra em Pernambuco, 3 no Paraná e duas em Santa Catarina."
         ]
-    },
-    {
-        "tag":"",
-        "id":22,
-        "patterns":[
-            "Como funciona a ets?"
-        ],
-        "responses":[
-            "DPS EU FAÇO"
-        ]
     }
 ]}
