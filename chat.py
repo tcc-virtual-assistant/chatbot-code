@@ -1,10 +1,11 @@
 import random
 import json
-import train
+# import train
 import torch
 import requests
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
+from sendUserAPI import sendAPI
 
 def chatbot():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -25,16 +26,27 @@ def chatbot():
     model = NeuralNet(input_size, hidden_size, output_size).to(device)
     model.load_state_dict(model_state)
     model.eval()
-
-    bot_name = "Ávila"
     print("Vamos testar! (Escreva 'sair' para sair)")
+
+    allQuestions = requests.get('http://localhost:8000/question')
+    allQuestions = (allQuestions.json())
+    newest = 0
+    for i in range(len(allQuestions)):
+        if i > newest:
+            newest = i
+    newestQuestion = (allQuestions[newest]['userQuestion'])
+    apiUserid = newest
+    sentence = newestQuestion
+    sentence = str(sentence)
+    print(sentence)
+
+
     while True:
-        sentence = input("Você: ")
         if sentence == "sair":
             print( "Espero que eu tenha conseguido te ajudar! Tenha um ótimo dia!")
             break
 
-        sentence = tokenize(sentence)
+        sentence = tokenize(str(sentence))
         X = bag_of_words(sentence, all_words)
         X = X.reshape(1, X.shape[0])
         X = torch.from_numpy(X).to(device)
@@ -49,10 +61,12 @@ def chatbot():
             for intent in intents['intents']:
                 if tag == intent["tag"]:
                     id = intent['id']
-                    response = requests.get(f'http://localhost:8000/answer/{id}')
-                    call = response.json()
-                    answer = call['response']
-                    print(answer)
+            response = requests.get(f'http://localhost:5000/answer/{id}')
+            call = response.json()
+            answer = call['response']
+            print(answer)
+            sendAPI(answer, apiUserid)
+            break
         else:
             print("Desculpe, eu não consegui compreender...")
 
