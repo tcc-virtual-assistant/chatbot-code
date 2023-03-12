@@ -2,6 +2,7 @@ import random
 import json
 # import train
 import torch
+import time
 import requests
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
@@ -27,47 +28,61 @@ def chatbot():
     model.load_state_dict(model_state)
     model.eval()
     print("Vamos testar! (Escreva 'sair' para sair)")
-
-    allQuestions = requests.get('http://localhost:8000/question')
-    allQuestions = (allQuestions.json())
-    newest = 0
-    for i in range(len(allQuestions)):
-        if i > newest:
-            newest = i
-    newestQuestion = (allQuestions[newest]['userQuestion'])
-    apiUserid = newest
-    sentence = newestQuestion
-    sentence = str(sentence)
-    print(sentence)
-
-
+    
+    newestID = 0
+    firstRun = 0
     while True:
-        if sentence == "sair":
-            print( "Espero que eu tenha conseguido te ajudar! Tenha um ótimo dia!")
-            break
+        # firstRun + 1
+        # if firstRun != 1:
+        #     timer = 2
+        # else:
+        #     timer = 0
+        
+        # time.sleep(timer)
+        allQuestions = requests.get('http://localhost:8000/question')
+        allQuestions = (allQuestions.json())
+        newest = 0
+        for i in range(len(allQuestions)):
+            if i > newest:
+                newest = i
+        newestQuestion = (allQuestions[newest]['userQuestion'])
+        apiUserid = newest
+        sentence = newestQuestion
+        sentence = str(sentence)
+        print(f" do começo {apiUserid}")
+        print(f" do começo newest {newestID}")
+        if newestID != apiUserid:
+            while True:
+                if sentence == "sair":
+                    print( "Espero que eu tenha conseguido te ajudar! Tenha um ótimo dia!")
+                    break
 
-        sentence = tokenize(str(sentence))
-        X = bag_of_words(sentence, all_words)
-        X = X.reshape(1, X.shape[0])
-        X = torch.from_numpy(X).to(device)
+                sentence = tokenize(str(sentence))
+                X = bag_of_words(sentence, all_words)
+                X = X.reshape(1, X.shape[0])
+                X = torch.from_numpy(X).to(device)
 
-        output = model(X)
-        _, predicted = torch.max(output, dim=1)
+                output = model(X)
+                _, predicted = torch.max(output, dim=1)
 
-        tag = tags[predicted.item()]
-        probs = torch.softmax(output, dim=1)
-        prob = probs[0][predicted.item()]
-        if prob.item() > 0.9993212223052980:
-            for intent in intents['intents']:
-                if tag == intent["tag"]:
-                    id = intent['id']
-            response = requests.get(f'http://localhost:5000/answer/{id}')
-            call = response.json()
-            answer = call['response']
-            print(answer)
-            sendAPI(answer, apiUserid)
-            break
-        else:
-            print("Desculpe, eu não consegui compreender...")
+                tag = tags[predicted.item()]
+                probs = torch.softmax(output, dim=1)
+                prob = probs[0][predicted.item()]
+                if prob.item() > 0.9993212223052980:
+                    for intent in intents['intents']:
+                        if tag == intent["tag"]:
+                            id = intent['id']
+                    response = requests.get(f'http://localhost:5000/answer/{id}')
+                    call = response.json()
+                    answer = call['response']
+                    print(answer)
+                    sendAPI(answer, apiUserid)
+                    time.sleep(3)
+                    print(f"antigo {newestID}")
+                    newestID = apiUserid
+                    print(f"novo {newestID}")
+                    break
+                else:
+                    print("Desculpe, eu não consegui compreender...")
 
 chatbot()
