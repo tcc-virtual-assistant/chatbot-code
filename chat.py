@@ -32,13 +32,13 @@ def chatbot():
     newestID = 0
     firstRun = 0
     while True:
-        # firstRun + 1
-        # if firstRun != 1:
-        #     timer = 2
-        # else:
-        #     timer = 0
+        firstRun + 1
+        if firstRun != 1:
+            timer = 1
+        else:
+            timer = 0
         
-        # time.sleep(timer)
+        time.sleep(timer)
         allQuestions = requests.get('http://localhost:8000/question')
         allQuestions = (allQuestions.json())
         newest = 0
@@ -77,7 +77,7 @@ def chatbot():
                     answer = call['response']
                     print(answer)
                     sendAPI(answer, apiUserid)
-                    time.sleep(3)
+                    time.sleep(2)
                     print(f"antigo {newestID}")
                     newestID = apiUserid
                     print(f"novo {newestID}")
